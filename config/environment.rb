@@ -3,6 +3,8 @@ require 'hanami/setup'
 require 'hanami/model'
 require_relative '../lib/bookshelf'
 require_relative '../apps/web/application'
+#initializers
+require_relative 'initializers/database'
 
 Hanami.configure do
   mount Web::Application, at: '/'
