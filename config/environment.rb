@@ -2,11 +2,13 @@ require 'bundler/setup'
 require 'hanami/setup'
 require 'hanami/model'
 require_relative '../lib/bookshelf'
+require_relative '../apps/accesos/application'
 require_relative '../apps/web/application'
 #initializers
 require_relative 'initializers/database'
 
 Hanami.configure do
+  mount Accesos::Application, at: '/accesos'
   mount Web::Application, at: '/'
 
   model do
